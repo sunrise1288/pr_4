@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int[] cubes = new int[1000];
+        // Заполняем массив кубами чисел от 1 до 1000
+        for (int i = 1; i <= 1000; i++) {
+            cubes[i-1] = i * i * i;
+        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первое число (от 1 до 1000): ");
+        int firstNumber = scanner.nextInt();
+        System.out.print("Введите второе число (от 1 до 1000): ");
+        int secondNumber = scanner.nextInt();
+        if (firstNumber >= 1 && firstNumber <= 1000 && secondNumber >= 1 && secondNumber <= 1000) {
+            int cubeOfFirstNumber = cubes[firstNumber - 1];
+            int cubeOfSecondNumber = cubes[secondNumber - 1];
+            System.out.println("Куб первого числа: " + cubeOfFirstNumber);
+            System.out.println("Куб второго числа: " + cubeOfSecondNumber);
+        } else {
+            System.out.println("Введенные числа вне допустимого диапазона.");
+        }
+    }
+}
